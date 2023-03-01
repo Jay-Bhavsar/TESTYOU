@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import Main from "./Components/Main";
+import Quiz from "./Components/Quiz";
+import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Result from "./Components/Result";
+import Login from "./Components/LocalStorageAuth/Login";
+import Home from "./Components/LocalStorageAuth/Home";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login></Login>,
+  },
+
+  {
+    path: "/home",
+    element: <Home></Home>,
+  },
+
+  {
+    path: "/quiz",
+    element: <Quiz></Quiz>,
+  },
+
+  {
+    path: "/result",
+    element: <Result />,
+  },
+]);
 
 function App() {
+  const [isLoggedIn, setisLoggedIn] = useState(null);
+  const logIn = () => {
+    setisLoggedIn(true);
+  };
+  const logOut = () => {
+    setisLoggedIn(false);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 
