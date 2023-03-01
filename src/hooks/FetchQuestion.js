@@ -29,7 +29,7 @@ export const useFetchQuestion = () => {
             setgetData((prev) => ({ ...prev, apiData: question }));
 
             /**dispatch an action */
-            dispatch();
+            dispatch(Action.startExamAction);
         }
       } 
       catch (error) {
