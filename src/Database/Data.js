@@ -27,3 +27,6 @@ export default [
     options: ["Uttar Pradesh", "Madhya Pradesh", "Gujarat", "none of these"],
   },
 ];
+
+
+export const answers = [2,0,0,0,0];

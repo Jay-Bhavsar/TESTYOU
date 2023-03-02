@@ -58,6 +58,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 2px solid #DDDD;
+    width: 50%;
+    margin: 30px 0;
 }
 
 .res{
